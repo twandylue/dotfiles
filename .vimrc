@@ -1,0 +1,205 @@
+set number
+set relativenumber
+set mouse=a
+set tabstop=4 softtabstop=4
+set shiftwidth=4
+set expandtab
+set smartindent
+set nowrap
+set smartcase
+set nobackup
+set incsearch
+set hlsearch
+set colorcolumn=125
+set showmode
+set showmatch
+set cursorline
+set ignorecase
+set nobackup
+set noswapfile
+set wildmenu
+set clipboard=unnamed
+set backspace=indent,eol,start
+syntax on
+set ttyfast
+
+"=====Cursor====="
+let &t_ti.="\e[1 q"
+let &t_te.="\e[0 q"
+
+" insert mode
+let &t_SI.="\e[5 q"
+" normal mode
+let &t_EI.="\e[1 q"
+
+"=====Mappings====="
+let mapleader=" "
+" <Esc> 會造成問題(ref: https://vi.stackexchange.com/questions/2614/why-does-this-esc-normal-mode-mapping-affect-startup)
+"nnoremap <Esc> :nohlsearch<CR>
+nnoremap ,<space> :nohlsearch<cr>
+nnoremap <leader>s :w<CR>
+nnoremap <leader>q :q<CR>
+nnoremap <leader>m `
+nnoremap <S-h> ^
+nnoremap <S-l> g_
+nnoremap gj gT
+nnoremap gk gt
+nnoremap <space>ww <C-W>w
+nnoremap <space>wh <C-W>h
+nnoremap <space>wj <C-W>j
+nnoremap <space>wk <C-W>k
+nnoremap <space>wl <C-W>l
+imap jj <Esc>
+
+" for terminal mode
+nnoremap <c-\> :tab term ++close<cr>
+tnoremap <c-\> <C-w>:q!<CR>
+tnoremap <Esc> <C-\><C-n>
+
+"=====Plugin====="
+call plug#begin()
+Plug 'morhetz/gruvbox'
+Plug 'preservim/nerdcommenter'
+Plug 'preservim/nerdtree'
+Plug 'easymotion/vim-easymotion'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'tommcdo/vim-exchange'
+Plug 'machakann/vim-highlightedyank'
+"Plug 'itchyny/lightline.vim'
+Plug 'jiangmiao/auto-pairs'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+Plug 'jreybert/vimagit'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'justinmk/vim-sneak'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+Plug 'Yggdroot/indentLine'
+Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'yarn install'}
+call plug#end()
+
+" ---theme---
+colorscheme gruvbox
+set background=dark
+"highlight search cterm=none ctermfg=darkyellow ctermbg=darkred
+highlight search cterm=none ctermfg=black ctermbg=darkred
+
+" ---easymotion---
+map / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+"停用, 先使用內建的 highlight
+"map n <Plug>(easymotion-next)
+"map N <Plug>(easymotion-prev)
+
+" ---sneak---
+" map f <Plug>Sneak_s
+" map F <Plug>Sneak_S
+
+
+" ---NERDTree---
+map <c-e> :NERDTree<CR>
+"map <c-b> :NERDTreeClose<CR>
+"map <c-e> :NERDTreeToggle<CR>
+
+"t: Open the selected file in a new tab
+"i: Open the selected file in a horizontal split window
+"s: Open the selected file in a vertical split window
+"I: Toggle hidden files
+"m: Show the NERD Tree menu
+"R: Refresh the tree, useful if files change outside of Vim
+"?: Toggle NERD Tree's quick help
+
+"---vim-commentary---
+" gcc: comment
+" gc: comment in visual mode
+
+"---highlightedyank---
+let g:highlightedyank_highlight_duration = 250
+
+"---lightline---
+" set laststatus=2
+" set noshowmode
+
+"---ariline---
+set noshowmode
+let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#enabled=1
+let g:airline_theme='onedark'
+" let g:airline_theme='dark'
+
+"=======git=======
+" Open vimagit pane
+" git status
+nnoremap <leader>gs :Magit<CR>
+
+" for vim-gitgutter
+" Use fontawesome icons as signs
+let g:gitgutter_sign_added = '+'
+let g:gitgutter_sign_modified = '>'
+let g:gitgutter_sign_removed = '-'
+let g:gitgutter_sign_removed_first_line = '^'
+let g:gitgutter_sign_modified_removed = '<'
+let g:gitgutter_override_sign_column_highlight = 1
+highlight SignColumn guibg=bg
+highlight SignColumn ctermbg=bg
+" Update sign column every quarter second
+set updatetime=200
+" Jump between hunks
+" git next
+nmap <Leader>gn <Plug>(GitGutterNextHunk)
+" git previous
+nmap <Leader>gp <Plug>(GitGutterPrevHunk)
+" git stage
+nmap <Leader>hs <Plug>(GitGutterStageHunk)
+" git undo
+nmap <Leader>hu <Plug>(GitGutterUndoHunk)
+" git preview
+nmap <Leader>hp <Plug>(GitGutterPreviewHunk)
+" close preview
+nmap <Leader>hc :pclose<CR>
+" 自動顯示/關閉 git preview
+" au CursorMoved * if gitgutter#hunk#in_hunk(line(".")) | GitGutterPreviewHunk | else | pclose | endif
+
+" =======markdown=======
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_json_frontmatter = 1
+let g:vim_markdown_override_foldtext = 0
+
+filetype plugin on
+"Uncomment to override defaults:
+"let g:instant_markdown_slow = 1
+let g:instant_markdown_autostart = 0
+"let g:instant_markdown_open_to_the_world = 1
+"let g:instant_markdown_allow_unsafe_content = 1
+"let g:instant_markdown_allow_external_content = 0
+"let g:instant_markdown_mathjax = 1
+"let g:instant_markdown_mermaid = 1
+"let g:instant_markdown_logfile = '/tmp/instant_markdown.log'
+"let g:instant_markdown_autoscroll = 0
+"let g:instant_markdown_port = 8888
+"let g:instant_markdown_python = 1
+
+" zr: reduces fold level throughout the buffer
+" zR: opens all folds
+" zm: increases fold level throughout the buffer
+" zM: folds everything all the way
+" za: open a fold your cursor is on
+" zA: open a fold your cursor is on recursively
+" zc: close a fold your cursor is on
+" zC: close a fold your cursor is on recursively
+
+nnoremap <leader>ip :InstantMarkdownPreview<CR>
+nnoremap <leader>is :InstantMarkdownStop<CR>
+
+
+" =======indentline=======
+" let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:vim_json_conceal=0
+
+if &filetype == 'markdown'
+    let g:indentLine_enabled = 0
+endif
