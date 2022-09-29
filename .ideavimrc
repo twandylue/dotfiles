@@ -1,0 +1,211 @@
+"" Source your .vimrc
+"source ~/.vimrc
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=7
+
+" Don't use Ex mode, use Q for formatting.
+"map Q gq
+
+set clipboard=unnamed
+set guicursor=n-v-c-i:block-Cursor
+set timeoutlen=500
+
+"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
+"" Map \r to the Reformat Code action
+"map \r <Action>(ReformatCode)
+
+"" Map <leader>d to start debug
+"map <leader>d <Action>(Debug)
+
+"" Map \b to toggle the breakpoint on the current line
+"map \b <Action>(ToggleLineBreakpoint)
+
+"顯示Vim 模式
+set showmode
+
+"設定搜尋時高亮顯示
+set incsearch
+
+"設定搜尋後高亮顯示
+set hlsearch
+
+"環繞"
+set surround
+
+"多游標
+set multiple-cursors
+
+"有待調整
+"參考資料：https://stackoverflow.com/questions/55202799/ideavim-multi-cursor-usage
+"nmap g <Plug>NextOccurrence
+"xmap <C-n> <Plug>NextOccurrence
+
+"sneak
+set sneak
+
+"搜尋時候忽略大小寫
+set ignorecase
+
+"顯示相對座標
+set relativenumber
+set number
+
+"關閉相對座標
+"nnoremap <Leader>sn <Esc>:set rnu!<CR>
+
+
+"========Mappings========"
+let mapleader=" "
+
+"移動到標記 
+nnoremap <Leader>m `
+
+"移動到句子最尾端
+nnoremap <S-l> g_
+
+"移動到句子最前端
+nnoremap <S-h> ^
+
+"轉跳到右側 Tab
+nnoremap gk gt
+
+"轉跳到左側 Tab
+nnoremap gj gT
+
+nnoremap <Leader>ww <C-w>w
+nnoremap <Leader>wh <C-w>h
+nnoremap <Leader>wj <C-w>j
+nnoremap <Leader>wk <C-w>k
+nnoremap <Leader>wl <C-w>l
+
+"TODO 尚未完成"
+"pin Tab
+"nnoremap gP :action PinActiveTab<CR><ESC>
+
+"move Tab
+"nnoremap gK :action MoveTabRight<CR><ESC>
+"nnoremap gK :action TabsActions<CR><ESC>
+"nnoremap gK :action ConvertIndentsToTabs<CR><ESC>
+
+"move entire line
+"in window
+"nnoremap <A-j> :action MoveLineDown<CR>
+"nnoremap <A-k> :action MoveLineUp<CR>
+"vnoremap <A-j> :action MoveLineDown<CR>
+"vnoremap <A-k> :action MoveLineUp<CR>
+
+"in mac
+nnoremap <C-j> :action MoveLineDown<cr>
+nnoremap <C-k> :action MoveLineUp<CR>
+vnoremap <C-j> :action MoveLineDown<cr>
+vnoremap <C-k> :action MoveLineUp<CR>
+
+
+imap jj <Esc>
+
+"清除高亮搜尋
+"nnoremap ,<space> :nohlsearch<CR><Esc>
+nnoremap <Esc> :nohlsearch<CR><Esc>
+
+"AceJump Mode
+nnoremap <Leader>/ :action AceAction<CR>
+
+"存檔
+nnoremap <Leader>s :w<CR><Esc>
+
+"關閉標籤
+nnoremap <Leader>q :q<CR><Esc>
+
+"open project menu
+nnoremap <Leader>e :action ActivateProjectToolWindow<CR><Esc>
+
+"comment
+nnoremap gcc :action CommentByLineComment<CR><Esc>
+
+"Go to error
+nnoremap ]e :action GotoNextError<CR><Esc>
+nnoremap [e :action GotoNextError<CR><Esc>
+
+"顯示參數說明
+nnoremap <Leader>p :action ParameterInfo<CR><Esc>
+nnoremap <tab>p :action GotoPreviousError<CR><Esc>
+
+"尋找被誰使用
+nnoremap <Leader>fu :action FindUsages<CR><Esc>
+nnoremap <tab>u :action FindUsages<CR><Esc>
+"nnoremap <Leader>su :action FindUsages<CR><Esc>
+
+" Go to somewhere
+"移至類別
+"nnoremap <Leader>c :action GotoClass<CR><Esc>
+nnoremap <tab>c :action GotoImplementation<CR><Esc>
+"移至實作
+"nnoremap <Leader>i :action GotoImplementation<CR><Esc>
+nnoremap <tab>i :action GotoImplementation<CR><Esc>
+
+"移至宣告
+"nnoremap <Leader>d :action GotoDeclaration<CR><Esc>
+nnoremap <tab>d :action GotoDeclaration<CR><Esc>
+
+"搜尋檔案
+nnoremap <Leader>. :action GotoFile<CR><Esc>
+
+"移至上一動
+"nnoremap <Leader>b :action Back<CR><Esc>
+nnoremap <tab>b :action Back<CR><Esc>
+"移至下一動
+nnoremap <tab>f :action Forward<CR><Esc>
+
+"開啟 terminal
+"open new terminal
+"nnoremap <C-\> :action Terminal.OpenInTerminal<CR><Esc>
+nnoremap <C-\> :action ActivateTerminalToolWindow<CR><Esc>
+
+"找到目前專案的成員
+"nnoremap <Leader>fm :action FileStructurePopup<CR><Esc>
+
+"前往測試
+nnoremap <Leader>gt :action GotoTest<CR><Esc>
+
+"展開 unit tests menu
+nnoremap <Leader>at :action ActivateUnitTestsToolWindow<CR><Esc>
+
+"跳出 unit tests 功能選單
+nnoremap <Leader>mt :action Rider.UnitTesting.Main<CR><Esc>
+
+"執行當前 unit test
+nnoremap <Leader>tt :action RiderUnitTestRunContextAction<CR><ESC>
+
+"執行上一次的 unit test
+nnoremap <Leader>pt :action RiderUnitTestRepeatPreviousRunAction<CR><ESC>
+
+"展開 Commit menu
+"nnoremap <Leader>sc :action ActivateCommitToolWindow<CR><Esc>
+nnoremap <Leader>gg :action ActivateCommitToolWindow<CR><Esc>
+
+"設定中斷點
+nnoremap <Leader>bp :action ToggleLineBreakpoint<CR><ESC>
+
+"Git
+"TODO 尚未完成"
+"nnoremap <Leader>hr :action Git.Stage.Reset<CR><ESC>
+"nnoremap <Leader>gs :action Git.Show.Stage<CR><ESC>
+"nnoremap <Leader>gD :action GitShowDiffWithBranchAction<CR><ESC>
+
+Plug 'machakann/vim-highlightedyank'
+
+Plug 'tpope/vim-surround'
+"cs"': Change the surrounding from double quotes to single quotes.
+"ds": Delete the closest double-quotes surroundings.
+"ysiw<b>: Surround the current word with <b> tag (iw means inner word.)
+
+Plug 'terryma/vim-multiple-cursors'
+
+Plug 'tommcdo/vim-exchange'
+"cx + motion: Select the first bloc to swap or select the second, and perform the swap.
+"cxx : Similar to cx but for the current line.
+"X: Similar to cx but for the select text.
+"cxc: Cancel pending exchange.
