@@ -21,7 +21,7 @@ export PATH="$PATH:/Users/andy/Library/Caches/pip"
 set -o vi
 
 # TODO: for dotfiles
-alias dgit=git --git-dir ~/Desktop/dotfiles/.git/ --work-tree=$HOME add karabiner.json
+alias dgit="git --git-dir ~/Desktop/dotfiles/.git/ --work-tree=$HOME"
 # function test(){
 #   echo Desktop/dotfiles/.git
 # }
