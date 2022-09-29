@@ -56,7 +56,6 @@ set number
 "關閉相對座標
 "nnoremap <Leader>sn <Esc>:set rnu!<CR>
 
-
 "========Mappings========"
 let mapleader=" "
 
@@ -103,7 +102,6 @@ nnoremap <C-k> :action MoveLineUp<CR>
 vnoremap <C-j> :action MoveLineDown<cr>
 vnoremap <C-k> :action MoveLineUp<CR>
 
-
 imap jj <Esc>
 
 "清除高亮搜尋
@@ -111,7 +109,7 @@ imap jj <Esc>
 nnoremap <Esc> :nohlsearch<CR><Esc>
 
 "AceJump Mode
-nnoremap <Leader>/ :action AceAction<CR>
+nnoremap gs/ :action AceAction<CR>
 
 "存檔
 nnoremap <Leader>s :w<CR><Esc>
@@ -130,11 +128,11 @@ nnoremap ]e :action GotoNextError<CR><Esc>
 nnoremap [e :action GotoNextError<CR><Esc>
 
 "顯示參數說明
-nnoremap <Leader>p :action ParameterInfo<CR><Esc>
+" nnoremap <Leader>p :action ParameterInfo<CR><Esc>
 nnoremap <tab>p :action GotoPreviousError<CR><Esc>
 
 "尋找被誰使用
-nnoremap <Leader>fu :action FindUsages<CR><Esc>
+" nnoremap <Leader>fu :action FindUsages<CR><Esc>
 nnoremap <tab>u :action FindUsages<CR><Esc>
 "nnoremap <Leader>su :action FindUsages<CR><Esc>
 
@@ -142,6 +140,7 @@ nnoremap <tab>u :action FindUsages<CR><Esc>
 "移至類別
 "nnoremap <Leader>c :action GotoClass<CR><Esc>
 nnoremap <tab>c :action GotoImplementation<CR><Esc>
+
 "移至實作
 "nnoremap <Leader>i :action GotoImplementation<CR><Esc>
 nnoremap <tab>i :action GotoImplementation<CR><Esc>
@@ -156,13 +155,15 @@ nnoremap <Leader>. :action GotoFile<CR><Esc>
 "移至上一動
 "nnoremap <Leader>b :action Back<CR><Esc>
 nnoremap <tab>b :action Back<CR><Esc>
+
 "移至下一動
 nnoremap <tab>f :action Forward<CR><Esc>
 
 "開啟 terminal
+nnoremap <C-\> :action ActivateTerminalToolWindow<CR><Esc>
+
 "open new terminal
 "nnoremap <C-\> :action Terminal.OpenInTerminal<CR><Esc>
-nnoremap <C-\> :action ActivateTerminalToolWindow<CR><Esc>
 
 "找到目前專案的成員
 "nnoremap <Leader>fm :action FileStructurePopup<CR><Esc>
