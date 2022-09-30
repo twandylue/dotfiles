@@ -22,21 +22,22 @@ set clipboard=unnamed
 set backspace=indent,eol,start
 syntax on
 set ttyfast
+set guicursor="i:block"
 
 "=====Cursor====="
-let &t_ti.="\e[1 q"
-let &t_te.="\e[0 q"
+" let &t_ti.="\e[1 q"
+" let &t_te.="\e[0 q"
 
-" insert mode
-let &t_SI.="\e[5 q"
-" normal mode
-let &t_EI.="\e[1 q"
+" " insert mode
+" let &t_SI.="\e[5 q"
+" " normal mode
+" let &t_EI.="\e[1 q"
 
 "=====Mappings====="
 let mapleader=" "
 " <Esc> 會造成問題(ref: https://vi.stackexchange.com/questions/2614/why-does-this-esc-normal-mode-mapping-affect-startup)
-"nnoremap <Esc> :nohlsearch<CR>
-nnoremap ,<space> :nohlsearch<cr>
+nnoremap <Esc> :nohlsearch<CR>
+" nnoremap ,<space> :nohlsearch<cr>
 nnoremap <leader>s :w<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>m `
@@ -124,7 +125,7 @@ let g:highlightedyank_highlight_duration = 250
 " set noshowmode
 
 "---ariline---
-set noshowmode
+" set noshowmode
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled=1
 let g:airline_theme='onedark'
