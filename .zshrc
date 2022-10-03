@@ -13,18 +13,22 @@ ZSH_DISABLE_COMPFIX=true
 export PATH=/opt/homebrew/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/share/npm/bin:$PATH
-export PATH=$HOME/.emacs.d/bin:$PATH
 export PATH="$PATH:/Users/andy/.dotnet/tools"
 export PATH="$PATH:/Users/andy/Library/Caches/pip"
+export PATH=$HOME/.emacs.d/bin:$PATH
 
 # use vim mode in terminal command line
 set -o vi
 
 # TODO: for dotfiles
 alias dgit="git --git-dir ~/Desktop/dotfiles/.git/ --work-tree=$HOME"
-# function test(){
-#   echo Desktop/dotfiles/.git
-# }
+
+# specify g++ version
+alias gcc='gcc-12'
+alias cpp='cpp-12'
+alias g++='g++-12'
+alias c++='c++-12'
+export CC='/opt/homebrew/bin/gcc-12'
 
 # open file in neovim
 fn() (
