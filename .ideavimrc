@@ -79,6 +79,7 @@ nnoremap <Leader>wh <C-w>h
 nnoremap <Leader>wj <C-w>j
 nnoremap <Leader>wk <C-w>k
 nnoremap <Leader>wl <C-w>l
+inoremap <C-o> <C-o>a
 
 "TODO 尚未完成"
 "pin Tab
