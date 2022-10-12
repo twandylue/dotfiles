@@ -51,6 +51,7 @@ nnoremap <space>wj <C-W>j
 nnoremap <space>wk <C-W>k
 nnoremap <space>wl <C-W>l
 imap jj <Esc>
+inoremap <C-o> <C-o>a
 
 " for terminal mode
 nnoremap <c-\> :tab term ++close<cr>
