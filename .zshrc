@@ -20,7 +20,7 @@ export PATH=$HOME/.emacs.d/bin:$PATH
 # use vim mode in terminal command line
 set -o vi
 
-# TODO: for dotfiles
+# add to dotfiles
 alias dgit="git --git-dir ~/Desktop/dotfiles/.git/ --work-tree=$HOME"
 
 # specify g++ version
