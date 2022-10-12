@@ -3,10 +3,9 @@
 My dotfiles
 
 ```console
-$ git --git-dir ~/Desktop/dotfiles/.git/ --work-tree=$HOME add [specific dotfile]
+git --git-dir ~/Desktop/dotfiles/.git/ --work-tree=$HOME add [specific dotfile]
 ```
 
-# References: 
+# References:
 
-1. [ Tutorials ](https://www.atlassian.com/git/tutorials/dotfiles)
-
+1. [Tutorials](https://www.atlassian.com/git/tutorials/dotfiles)
