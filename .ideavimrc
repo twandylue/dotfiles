@@ -5,6 +5,7 @@
 " Show a few lines of context around the cursor. Note that this makes the
 " text scroll if you mouse-click near the start or end of the window.
 set scrolloff=7
+set sidescrolloff=8
 
 " Don't use Ex mode, use Q for formatting.
 "map Q gq
@@ -190,6 +191,9 @@ nnoremap <Leader>gg :action ActivateCommitToolWindow<CR><Esc>
 
 "設定中斷點
 nnoremap <Leader>bp :action ToggleLineBreakpoint<CR><ESC>
+
+" find in file
+nnoremap [g :action FindInPath<CR><Esc>
 
 "Git
 "TODO 尚未完成"
