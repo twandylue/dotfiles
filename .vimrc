@@ -3,6 +3,8 @@ set relativenumber
 set mouse=a
 set tabstop=4 softtabstop=4
 set shiftwidth=4
+set scrolloff=6
+set sidescrolloff=8
 set expandtab
 set smartindent
 set nowrap
