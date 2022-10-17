@@ -202,6 +202,8 @@ nnoremap [g :action FindInPath<CR><Esc>
 "nnoremap <Leader>gD :action GitShowDiffWithBranchAction<CR><ESC>
 
 Plug 'machakann/vim-highlightedyank'
+set highlightedyank
+let g:highlightedyank_highlight_color = "rgba(255, 0, 0, 155)"
 
 Plug 'tpope/vim-surround'
 "cs"': Change the surrounding from double quotes to single quotes.
