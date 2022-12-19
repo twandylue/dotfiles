@@ -1,9 +1,10 @@
+syntax on
 set number
 set relativenumber
 set mouse=a
 set tabstop=4 softtabstop=4
 set shiftwidth=4
-set scrolloff=6
+set scrolloff=8
 set sidescrolloff=8
 set expandtab
 set smartindent
@@ -12,7 +13,7 @@ set smartcase
 set nobackup
 set incsearch
 set hlsearch
-set colorcolumn=125
+set colorcolumn=120
 set showmode
 set showmatch
 set cursorline
@@ -22,7 +23,6 @@ set noswapfile
 set wildmenu
 set clipboard=unnamed
 set backspace=indent,eol,start
-syntax on
 set ttyfast
 set guicursor="i:block"
 
@@ -52,6 +52,11 @@ nnoremap <space>wh <C-W>h
 nnoremap <space>wj <C-W>j
 nnoremap <space>wk <C-W>k
 nnoremap <space>wl <C-W>l
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+nnoremap Q <nop>
 imap jj <Esc>
 inoremap <C-o> <C-o>a
 
