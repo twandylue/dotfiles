@@ -38,7 +38,7 @@ set guicursor="i:block"
 "=====Mappings====="
 let mapleader=" "
 " <Esc> 會造成問題(ref: https://vi.stackexchange.com/questions/2614/why-does-this-esc-normal-mode-mapping-affect-startup)
-nnoremap <Esc> :nohlsearch<CR>
+nnoremap <silent> <Esc> :nohlsearch<CR>
 " nnoremap ,<space> :nohlsearch<cr>
 nnoremap <leader>s :w<CR>
 nnoremap <leader>q :q<CR>
