@@ -85,9 +85,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'justinmk/vim-sneak'
 Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
 Plug 'Yggdroot/indentLine'
-Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'yarn install'}
 call plug#end()
 
 " ---theme---
@@ -171,39 +169,6 @@ nmap <Leader>hp <Plug>(GitGutterPreviewHunk)
 nmap <Leader>hc :pclose<CR>
 " 自動顯示/關閉 git preview
 " au CursorMoved * if gitgutter#hunk#in_hunk(line(".")) | GitGutterPreviewHunk | else | pclose | endif
-
-" =======markdown=======
-let g:vim_markdown_folding_disabled = 1
-let g:vim_markdown_frontmatter = 1
-let g:vim_markdown_json_frontmatter = 1
-let g:vim_markdown_override_foldtext = 0
-
-filetype plugin on
-"Uncomment to override defaults:
-"let g:instant_markdown_slow = 1
-let g:instant_markdown_autostart = 0
-"let g:instant_markdown_open_to_the_world = 1
-"let g:instant_markdown_allow_unsafe_content = 1
-"let g:instant_markdown_allow_external_content = 0
-"let g:instant_markdown_mathjax = 1
-"let g:instant_markdown_mermaid = 1
-"let g:instant_markdown_logfile = '/tmp/instant_markdown.log'
-"let g:instant_markdown_autoscroll = 0
-"let g:instant_markdown_port = 8888
-"let g:instant_markdown_python = 1
-
-" zr: reduces fold level throughout the buffer
-" zR: opens all folds
-" zm: increases fold level throughout the buffer
-" zM: folds everything all the way
-" za: open a fold your cursor is on
-" zA: open a fold your cursor is on recursively
-" zc: close a fold your cursor is on
-" zC: close a fold your cursor is on recursively
-
-nnoremap <leader>ip :InstantMarkdownPreview<CR>
-nnoremap <leader>is :InstantMarkdownStop<CR>
-
 
 " =======indentline=======
 " let g:indentLine_char_list = ['|', '¦', '┆', '┊']
