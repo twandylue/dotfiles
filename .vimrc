@@ -37,9 +37,9 @@ set guicursor="i:block"
 
 "=====Mappings====="
 let mapleader=" "
-" <Esc> 會造成問題(ref: https://vi.stackexchange.com/questions/2614/why-does-this-esc-normal-mode-mapping-affect-startup)
-nnoremap <silent> <Esc> :nohlsearch<CR>
+" NOTE: <Esc> 會造成問題(ref: https://vi.stackexchange.com/questions/2614/why-does-this-esc-normal-mode-mapping-affect-startup)
 " nnoremap ,<space> :nohlsearch<cr>
+nnoremap <silent> <Esc> :nohlsearch<CR>
 nnoremap <leader>s :w<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>m `
@@ -78,7 +78,6 @@ Plug 'machakann/vim-highlightedyank'
 "Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-Plug 'jreybert/vimagit'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
@@ -137,10 +136,8 @@ let g:airline#extensions#tabline#enabled=1
 let g:airline_theme='onedark'
 " let g:airline_theme='dark'
 
-"=======git=======
-" Open vimagit pane
-" git status
-nnoremap <leader>gs :Magit<CR>
+"=======fugitive.vim=======
+nnoremap <leader>gg :Git<CR>
 
 " for vim-gitgutter
 " Use fontawesome icons as signs
