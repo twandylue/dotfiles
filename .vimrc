@@ -104,11 +104,10 @@ omap / <Plug>(easymotion-tn)
 " map f <Plug>Sneak_s
 " map F <Plug>Sneak_S
 
-
 " ---NERDTree---
-map <c-e> :NERDTree<CR>
-"map <c-b> :NERDTreeClose<CR>
-"map <c-e> :NERDTreeToggle<CR>
+" map <leader>e :NERDTree<CR>
+" map <c-b> :NERDTreeClose<CR>
+map <leader>e :NERDTreeToggle<CR>
 
 "t: Open the selected file in a new tab
 "i: Open the selected file in a horizontal split window
@@ -153,17 +152,17 @@ highlight SignColumn ctermbg=bg
 set updatetime=200
 " Jump between hunks
 " git next
-nmap <Leader>gn <Plug>(GitGutterNextHunk)
+nmap <Leader>g] <Plug>(GitGutterNextHunk)
 " git previous
-nmap <Leader>gp <Plug>(GitGutterPrevHunk)
+nmap <Leader>g[ <Plug>(GitGutterPrevHunk)
 " git stage
-nmap <Leader>hs <Plug>(GitGutterStageHunk)
+nmap <Leader>gs <Plug>(GitGutterStageHunk)
 " git undo
-nmap <Leader>hu <Plug>(GitGutterUndoHunk)
+nmap <Leader>gr <Plug>(GitGutterUndoHunk)
 " git preview
-nmap <Leader>hp <Plug>(GitGutterPreviewHunk)
+nmap <Leader>gp <Plug>(GitGutterPreviewHunk)
 " close preview
-nmap <Leader>hc :pclose<CR>
+nmap <Leader>gc :pclose<CR>
 " 自動顯示/關閉 git preview
 " au CursorMoved * if gitgutter#hunk#in_hunk(line(".")) | GitGutterPreviewHunk | else | pclose | endif
 
