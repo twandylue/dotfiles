@@ -10,6 +10,11 @@ tap "homebrew/services"
 tap "homebrew/test-bot"
 tap "isen-ng/dotnet-sdk-versions"
 tap "omnisharp/omnisharp-roslyn"
+tap "wez/wezterm"
+# Platform built on V8 to build network applications
+brew "node"
+# Command-line tool for Apollo GraphQL
+brew "apollo-cli"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
 # Clone of cat(1) with syntax highlighting and Git integration
@@ -42,8 +47,6 @@ brew "luarocks"
 brew "neovim"
 # HTTP/2 C Library
 brew "nghttp2"
-# Platform built on V8 to build network applications
-brew "node"
 # Highly capable, feature-rich programming language
 brew "perl"
 # Interpreted, interactive, object-oriented programming language
@@ -52,6 +55,8 @@ brew "python@3.10"
 brew "redis", restart_service: true
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Powerful, clean, object-oriented scripting language
+brew "ruby"
 # Experimental Rust compiler front-end for IDEs
 brew "rust-analyzer"
 # Version control system designed to be a better CVS
@@ -79,3 +84,5 @@ cask "font-jetbrains-mono"
 # Developer targeted fonts with a high number of glyphs
 cask "font-sauce-code-pro-nerd-font"
 cask "font-source-code-pro-for-powerline"
+# GPU-accelerated cross-platform terminal emulator and multiplexer
+cask "wezterm"
