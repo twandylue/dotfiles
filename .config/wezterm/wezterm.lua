@@ -1,8 +1,10 @@
 local wezterm = require("wezterm")
 
 local default_prog
+local font_size = 17.0
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
   default_prog = { "powershell", "-NoLogo" }
+  font_size = 10.0
 end
 
 return {
@@ -12,7 +14,7 @@ return {
     cursor_bg = "Red",
     cursor_fg = "black",
   },
-  font_size = 16.0,
+  font_size = font_size,
 
   window_background_opacity = 0.90,
 
