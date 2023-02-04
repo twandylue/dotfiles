@@ -1,49 +1,61 @@
-"" Source your .vimrc
-"source ~/.vimrc
+" source ~/.vimrc
 
+" search
+set hlsearch
+set incsearch
+set smartcase
+set ignorecase
+set showmode
 set scrolloff=7
 set sidescrolloff=8
+
+" basic
 set clipboard=unnamed
 set guicursor=n-v-c-i:block-Cursor
 set timeoutlen=500
-set showmode
-set ignorecase
-set incsearch
-set hlsearch
-set sneak
 set relativenumber
 set number
-"nnoremap <Leader>sn <Esc>:set rnu!<CR>
 
-"========Mappings========"
+" plugins
+" set sneak
+set surround
+set highlightedyank
+set exchange
+set NERDTree
+set easymotion
+set multiple-cursors
+" Remap multiple-cursors shortcuts to match terryma/vim-multiple-cursors for Mac
+nmap <C-n> <Plug>NextWholeOccurrence
+xmap <C-n> <Plug>NextWholeOccurrence
+nmap g<C-n> <Plug>NextOccurrence
+xmap g<C-n> <Plug>NextOccurrence
+nmap <C-x> <Plug>SkipOccurrence
+xmap <C-x> <Plug>SkipOccurrence
+nmap <C-p> <Plug>RemoveOccurrence
+xmap <C-p> <Plug>RemoveOccurrence
+
+"========Key Mapping========"
 let mapleader=" "
 
-"移動到標記 
 nnoremap <Leader>m `
-
-"移動到句子最尾端
-nnoremap <S-l> g_
-
-"移動到句子最前端
-nnoremap <S-h> ^
-
-"轉跳到右側 Tab
+nnoremap L $
+nnoremap H ^
 nnoremap gk gt
-
-"轉跳到左側 Tab
 nnoremap gj gT
-
+inoremap <C-a> <Home>
+inoremap <C-e> <End>
+inoremap <C-d> <Delete>
+inoremap <C-o> <C-o>a
 nnoremap <Leader>ww <C-w>w
 nnoremap <Leader>wh <C-w>h
 nnoremap <Leader>wj <C-w>j
 nnoremap <Leader>wk <C-w>k
 nnoremap <Leader>wl <C-w>l
-inoremap <C-o> <C-o>a
-
-"move Tab
-"nnoremap gK :action MoveTabRight<CR><ESC>
-"nnoremap gK :action TabsActions<CR><ESC>
-"nnoremap gK :action ConvertIndentsToTabs<CR><ESC>
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+nnoremap Q <nop>
+nnoremap n nzzzv
+nnoremap N Nzzzv
 
 "move entire line
 "in window
@@ -58,108 +70,96 @@ nnoremap <M-k> :action MoveLineUp<CR>
 vnoremap <M-j> :action MoveLineDown<CR>
 vnoremap <M-k> :action MoveLineUp<CR>
 
-imap jj <Esc>
 nnoremap <Esc> :nohlsearch<CR><Esc>
 nnoremap <Leader>s :w<CR><Esc>
 nnoremap <Leader>q :q<CR><Esc>
 
-"AceJump Mode
-nnoremap gs/ :action AceAction<CR>
+" NerdTree
+nnoremap <leader>e :NERDTreeToggle<CR>
 
-"open project menu
-nnoremap <Leader>e :action ActivateProjectToolWindow<CR><Esc>
+" easymotion(TODO:)
+" nnoremap <leader>g/ <Plug>(easymotion-sn)
+
+"========Action========"
+"AceJump Mode
+nnoremap <leader>g/ :action AceAction<CR>
 
 "comment single line
 nnoremap gcc :action CommentByLineComment<CR><Esc>
 
+"Rename variables
+nnoremap R :action RenameElement<CR>
+
+"open project menu(use NERDTree now)
+" nnoremap <Leader>e :action ActivateProjectToolWindow<CR><Esc>
+" nnoremap <leader>e :action SelectInProjectView<CR>
+
+"顯示參數說明 TODO:
+"nnoremap <tab>p :action ParameterInfo<CR><Esc>
+
+" --- Jump ---"
+"尋找被誰使用
+nnoremap <tab>u :action FindUsages<CR><Esc>
+"移至實作
+nnoremap <tab>i :action GotoImplementation<CR><Esc>
+"移至宣告
+nnoremap <tab>d :action GotoDeclaration<CR><Esc>
+"尋找類別
+nnoremap <Leader>c :action GotoClass<CR><Esc>
+"移至上一動
+nnoremap gb :action Back<CR><Esc>
+"移至下一動
+nnoremap gf :action Forward<CR><Esc>
 "Go to error
 nnoremap ]e :action GotoNextError<CR><Esc>
 nnoremap [e :action GotoNextError<CR><Esc>
 
-"顯示參數說明 TODO:
-nnoremap <tab>p :action ParameterInfo<CR><Esc>
-
-"尋找被誰使用
-nnoremap <tab>u :action FindUsages<CR><Esc>
-
-"移至實作
-nnoremap <tab>i :action GotoImplementation<CR><Esc>
-
-"移至宣告
-nnoremap <tab>d :action GotoDeclaration<CR><Esc>
-
-"搜尋檔案
-nnoremap <Leader>. :action GotoFile<CR><Esc>
-
-"尋找類別
-nnoremap <Leader>c :action GotoClass<CR><Esc>
-
-"find in file
-nnoremap [g :action FindInPath<CR><Esc>
-
-"移至上一動
-nnoremap gb :action Back<CR><Esc>
-
-"移至下一動
-nnoremap gf :action Forward<CR><Esc>
-
+" --- Terminal ---"
 "開啟 terminal
 nnoremap <C-\> :action ActivateTerminalToolWindow<CR><Esc>
 
+" --- Find ---"
+"Find in file
+nnoremap [g :action FindInPath<CR><Esc>
+"搜尋檔案
+nnoremap <Leader>. :action GotoFile<CR><Esc>
 "找到目前專案的成員
 "nnoremap <Leader>fm :action FileStructurePopup<CR><Esc>
 
-"前往測試
+" --- Test ---"
+"前往 unit test
 nnoremap <Leader>gt :action GotoTest<CR><Esc>
-
 "展開 unit tests menu
 nnoremap <Leader>at :action ActivateUnitTestsToolWindow<CR><Esc>
-
 "跳出 unit tests 功能選單
 nnoremap <Leader>mt :action Rider.UnitTesting.Main<CR><Esc>
-
 "執行當前 unit test
 nnoremap <Leader>tt :action RiderUnitTestRunContextAction<CR><ESC>
-
 "執行上一次的 unit test
 nnoremap <Leader>pt :action RiderUnitTestRepeatPreviousRunAction<CR><ESC>
-
-"展開 Commit menu
-nnoremap <Leader>gg :action ActivateCommitToolWindow<CR><Esc>
-
 "設定中斷點
 nnoremap <Leader>bp :action ToggleLineBreakpoint<CR><ESC>
 
-"Git
+" --- Git ---"
+"展開 Commit menu
+nnoremap <Leader>gg :action ActivateCommitToolWindow<CR><Esc>
 "TODO
 "nnoremap <Leader>hr :action Git.Stage.Reset<CR><ESC>
 "nnoremap <Leader>gs :action Git.Show.Stage<CR><ESC>
 "nnoremap <Leader>gD :action GitShowDiffWithBranchAction<CR><ESC>
 
+"--- Plugins ---"
 Plug 'machakann/vim-highlightedyank'
-set highlightedyank
 let g:highlightedyank_highlight_color = "rgba(255, 0, 0, 155)"
-
 Plug 'tpope/vim-surround'
-set surround
 "cs"': Change the surrounding from double quotes to single quotes.
 "ds": Delete the closest double-quotes surroundings.
 "ysiw<b>: Surround the current word with <b> tag (iw means inner word.)
-
 Plug 'terryma/vim-multiple-cursors'
-set multiple-cursors
-" Remap multiple-cursors shortcuts to match terryma/vim-multiple-cursors
-nmap <C-n> <Plug>NextWholeOccurrence
-xmap <C-n> <Plug>NextWholeOccurrence
-nmap g<C-n> <Plug>NextOccurrence
-xmap g<C-n> <Plug>NextOccurrence
-nmap <C-x> <Plug>SkipOccurrence
-xmap <C-x> <Plug>SkipOccurrence
-nmap <C-p> <Plug>RemoveOccurrence
-xmap <C-p> <Plug>RemoveOccurrence
-
 Plug 'tommcdo/vim-exchange'
 "cx + motion: Select the first bloc to swap or select the second, and perform the swap.
 "cxx : Similar to cx but for the current line.
 "X: Similar to cx but for the select text.
 "cxc: Cancel pending exchange.
+Plug 'preservim/nerdtree'
+"Plug 'easymotion/vim-easymotion'
