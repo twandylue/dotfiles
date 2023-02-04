@@ -58,6 +58,9 @@ nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
 nnoremap Q <nop>
 imap jj <Esc>
+inoremap <C-a> <Home>
+inoremap <C-e> <End>
+inoremap <C-d> <Delete>
 inoremap <C-o> <C-o>a
 
 " for terminal mode
