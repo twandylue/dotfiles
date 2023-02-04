@@ -21,6 +21,7 @@ set number
 set surround
 set highlightedyank
 set exchange
+" NERDTree ref: https://github.com/JetBrains/ideavim/wiki/NERDTree-support
 set NERDTree
 set easymotion
 set multiple-cursors
