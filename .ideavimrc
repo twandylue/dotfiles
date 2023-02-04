@@ -76,7 +76,8 @@ nnoremap <Leader>s :w<CR><Esc>
 nnoremap <Leader>q :q<CR><Esc>
 
 " NerdTree
-nnoremap <leader>e :NERDTreeToggle<CR>
+"nnoremap <leader>e :NERDTreeToggle<CR>
+nnoremap <leader>e :NERDTreeFocus<CR>
 
 " easymotion(TODO:)
 " nnoremap <leader>g/ <Plug>(easymotion-sn)
