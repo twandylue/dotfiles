@@ -150,6 +150,24 @@ nnoremap <Leader>gg :action ActivateCommitToolWindow<CR><Esc>
 "nnoremap <Leader>gs :action Git.Show.Stage<CR><ESC>
 "nnoremap <Leader>gD :action GitShowDiffWithBranchAction<CR><ESC>
 
+"--- unimpaired mappings ---"
+nnoremap [<space> O<esc>j
+nnoremap ]<space> o<esc>k
+nnoremap [q :action PreviousOccurence<cr>
+nnoremap ]q :action NextOccurence<cr>
+nnoremap [m :action MethodUp<cr>
+nnoremap ]m :action MethodDown<cr>
+nnoremap [c :action VcsShowPrevChangeMarker<cr>
+nnoremap ]c :action VcsShowNextChangeMarker<cr>
+
+"--- Options ---"
+" built-in navigation to navigated items works better
+nnoremap <c-o> :action Back<cr>
+nnoremap <c-i> :action Forward<cr>
+" but preserve ideavim defaults
+nnoremap g<c-o> <c-o>
+nnoremap g<c-i> <c-i>
+
 "--- Plugins ---"
 Plug 'machakann/vim-highlightedyank'
 let g:highlightedyank_highlight_color = "rgba(255, 0, 0, 155)"
