@@ -1,0 +1,37 @@
+[git_branch]
+
+[git_status]
+staged = '[++\($count\)](green)'
+
+[git_state]
+
+[git_commit]
+
+[git_metrics]
+disabled = true
+added_style = "bold blue"
+deleted_style = "bold yellow"
+format ='[+$added]($added_style)/[-$deleted]($deleted_style) '
+
+[dotnet]
+
+[nodejs]
+format = ""
+
+[directory]
+
+[memory_usage]
+disabled = false
+threshold = -1
+# symbol = ""
+style = "bold dimmed red"
+format = "-  [${ram}]($style) "
+
+[line_break]
+# disabled = true
+
+# [hostname]
+# ssh_only = false
+# format = "[$ssh_symbol](bold blue) on [$hostname](bold red) "
+# trim_at = ".companyname.com"
+# disabled = false
