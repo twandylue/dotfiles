@@ -45,6 +45,7 @@ set statusline+=\
 set statusline+=[%n]
 set statusline+=\ 
 set statusline+=%F
+set statusline+=%m
 set statusline+=\ 
 set statusline+=%y
 set statusline+=[Git%{b:gitbranch}]
