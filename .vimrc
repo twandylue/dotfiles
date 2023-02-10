@@ -26,6 +26,7 @@ set backspace=indent,eol,start
 set ttyfast
 set guicursor="i:block"
 set ruler
+set shortmess-=S
 
 "=====Font====="
 if has("gui_running")
