@@ -90,7 +90,7 @@ nnoremap <leader>g/ :action AceAction<CR>
 nnoremap gcc :action CommentByLineComment<CR><Esc>
 
 "Rename variables
-nnoremap R :action RenameElement<CR>
+nnoremap <Tab>r :action RenameElement<CR>
 
 "open project menu(use NERDTree now)
 " nnoremap <Leader>e :action ActivateProjectToolWindow<CR><Esc>
