@@ -145,10 +145,10 @@ nnoremap <Leader>bp :action ToggleLineBreakpoint<CR><ESC>
 " --- Git ---"
 "展開 Commit menu
 nnoremap <Leader>gg :action ActivateCommitToolWindow<CR><Esc>
-"TODO
-"nnoremap <Leader>hr :action Git.Stage.Reset<CR><ESC>
-"nnoremap <Leader>gs :action Git.Show.Stage<CR><ESC>
-"nnoremap <Leader>gD :action GitShowDiffWithBranchAction<CR><ESC>
+"Shelve(preview change)
+nnoremap <Leader>gp :action ChangesView.Shelve<CR><Esc>
+"Rollback(restore hunk)
+nnoremap <Leader>gr :action Vcs.RollbackChangedLines<CR><Esc>
 
 "--- unimpaired mappings ---"
 nnoremap [<space> O<esc>j
