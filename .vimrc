@@ -27,6 +27,8 @@ set ttyfast
 set guicursor="i:block"
 set ruler
 set shortmess-=S
+set listchars=trail:-
+set linebreak
 
 "=====Font====="
 if has("gui_running")
