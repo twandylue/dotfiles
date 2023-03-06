@@ -55,14 +55,16 @@ brew "python@3.10"
 brew "redis", restart_service: true
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
-# Powerful, clean, object-oriented scripting language
-brew "ruby"
 # Experimental Rust compiler front-end for IDEs
 brew "rust-analyzer"
+# Opinionated Lua code formatter
+brew "stylua"
 # Version control system designed to be a better CVS
 brew "subversion"
 # User interface to the TELNET protocol
 brew "telnet"
+# Terminal multiplexer
+brew "tmux"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
 # Ncurses-based file manager with vi-like keybindings
