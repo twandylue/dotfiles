@@ -19,7 +19,30 @@ return {
   window_background_opacity = 0.90,
 
   -- Disable ligatures
-  -- https://wezfurlong.org/wezterm/config/font-shaping.html
+  -- ref: https://wezfurlong.org/wezterm/config/font-shaping.html
   harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
   default_prog = default_prog,
+  -- Search in copy mode
+  -- ref: https://github.com/wez/wezterm/issues/1592
+  -- key_tables = {
+  --   copy_mode = {
+  --     { key = "Escape", mods = "NONE", action = wezterm.action({ CopyMode = "Close" }) },
+  --     { key = "h", mods = "NONE", action = wezterm.action({ CopyMode = "MoveLeft" }) },
+  --     { key = "j", mods = "NONE", action = wezterm.action({ CopyMode = "MoveDown" }) },
+  --     { key = "k", mods = "NONE", action = wezterm.action({ CopyMode = "MoveUp" }) },
+  --     { key = "l", mods = "NONE", action = wezterm.action({ CopyMode = "MoveRight" }) },
+  --     -- Enter search mode to edit the pattern.
+  --     -- When the search pattern is an empty string the existing pattern is preserved
+  --     { key = "/", mods = "NONE", action = wezterm.action({ Search = { CaseSensitiveString = "" } }) },
+  --     -- navigate any search mode results
+  --     { key = "n", mods = "NONE", action = wezterm.action({ CopyMode = "NextMatch" }) },
+  --     { key = "N", mods = "SHIFT", action = wezterm.action({ CopyMode = "PriorMatch" }) },
+  --   },
+  --   search_mode = {
+  --     { key = "Escape", mods = "NONE", action = wezterm.action({ CopyMode = "Close" }) },
+  --     -- Go back to copy mode when pressing enter, so that we can use unmodified keys like "n"
+  --     -- to navigate search results without conflicting with typing into the search area.
+  --     { key = "Enter", mods = "NONE", action = "ActivateCopyMode" },
+  --   },
+  -- },
 }
