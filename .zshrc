@@ -42,16 +42,13 @@ fn() (
     [[ -n "$files" ]] && nvim "${files[@]}"
 )
 
-# TODO: 要怎麼 cd 到另外的資料夾呢...
+# Show the preview of files
 ff() (
     local directory
     IFS=$'\n' \
        directory=$(fzf --reverse \
                     --preview "bat --theme=timu-spacegrey --color=always {}" \
                     --query="$1" --multi --select-1 --exit-0) &&
-    # directory=$(fzf --reverse \
-    #             --preview "bat --theme=timu-spacegrey --color=always {}" \
-    #             --query="$1" --multi --select-1 --exit-0) &&
     local dir="$(dirname ${directory[@]})"
     echo "$dir"
     cd "$dir"
