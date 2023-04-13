@@ -30,6 +30,16 @@ set shortmess-=S
 set listchars=trail:-
 set linebreak
 
+" WSL yank support
+" ref: https://github.com/microsoft/WSL/issues/4440#issuecomment-638884035
+let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path according to your mount point
+if executable(s:clip)
+    augroup WSLYank
+        autocmd!
+        autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
+    augroup END
+endif
+
 "=====Font====="
 if has("gui_running")
   if has("gui_gtk2")
