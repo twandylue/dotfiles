@@ -27,7 +27,7 @@ set ttyfast
 set guicursor="i:block"
 set ruler
 set shortmess-=S
-set listchars=trail:-
+set listchars=eol:↵,tab:>·,trail:.,extends:>,precedes:<,space:␣
 set linebreak
 
 " WSL yank support
@@ -145,6 +145,7 @@ call plug#end()
 colorscheme gruvbox
 set background=dark
 highlight search cterm=none ctermfg=black ctermbg=darkred
+highlight LineNr ctermfg=grey ctermbg=240
 
 "=====Highlightedyank====="
 let g:highlightedyank_highlight_duration = 250
