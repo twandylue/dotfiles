@@ -33,6 +33,8 @@ brew "unbound"
 brew "gnutls"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
+# Improved top (interactive process viewer)
+brew "htop"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # Modern load testing tool, using Go and JavaScript
@@ -49,8 +51,12 @@ brew "neovim"
 brew "nghttp2"
 # Highly capable, feature-rich programming language
 brew "perl"
+# PDF rendering library (based on the xpdf-3.0 code base)
+brew "poppler"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.10"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.11"
 # Persistent key-value database, with built-in net interface
 brew "redis", restart_service: true
 # Search tool like grep and The Silver Searcher
@@ -77,8 +83,6 @@ brew "yarn"
 brew "yq"
 # Task runner / simpler Make alternative written in Go
 brew "go-task/tap/go-task"
-# Text editor
-cask "emacs"
 # Free monospaced font with programming ligatures
 cask "font-fira-code"
 # Typeface made for developers
