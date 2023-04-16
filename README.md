@@ -16,4 +16,4 @@ brew bundle dump --describe --force --file="~/Desktop/Brewfile"
 
 ## References
 
-1. [Tutorials](https://www.atlassian.com/git/tutorials/dotfiles)
+- [Tutorials](https://www.atlassian.com/git/tutorials/dotfiles)
