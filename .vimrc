@@ -27,7 +27,8 @@ set ttyfast
 set guicursor="i:block"
 set ruler
 set shortmess-=S
-set listchars=eol:↵,tab:>·,trail:.,extends:>,precedes:<,space:␣
+set listchars=eol:↵,tab:>·,trail:.,extends:>,precedes:<,space:.
+set list
 set linebreak
 
 " WSL yank support
