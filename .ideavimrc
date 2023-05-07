@@ -76,15 +76,15 @@ nnoremap <Leader>s :w<CR><Esc>
 nnoremap <Leader>q :q<CR><Esc>
 
 " NerdTree
-"nnoremap <leader>e :NERDTreeToggle<CR>
-nnoremap <leader>e :NERDTreeFocus<CR>
+"nnoremap <Leader>e :NERDTreeToggle<CR>
+nnoremap <Leader>e :NERDTreeFocus<CR>
 
 " easymotion(TODO:)
-" nnoremap <leader>g/ <Plug>(easymotion-sn)
+" nnoremap <Leader>g/ <Plug>(easymotion-sn)
 
 "========Action========"
 "AceJump Mode
-nnoremap <leader>g/ :action AceAction<CR>
+nnoremap <Leader>g/ :action AceAction<CR>
 
 "comment single line
 nnoremap gcc :action CommentByLineComment<CR><Esc>
@@ -94,7 +94,7 @@ nnoremap <Tab>r :action RenameElement<CR>
 
 "open project menu(use NERDTree now)
 " nnoremap <Leader>e :action ActivateProjectToolWindow<CR><Esc>
-" nnoremap <leader>e :action SelectInProjectView<CR>
+" nnoremap <Leader>e :action SelectInProjectView<CR>
 
 "顯示參數說明 TODO:
 "nnoremap <tab>p :action ParameterInfo<CR><Esc>
