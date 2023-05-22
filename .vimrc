@@ -30,6 +30,8 @@ set shortmess-=S
 set listchars=eol:↵,tab:>·,trail:.,extends:>,precedes:<,space:.
 set list
 set linebreak
+set timeoutlen=1000
+set ttimeoutlen=50
 
 " WSL yank support
 " ref: https://github.com/microsoft/WSL/issues/4440#issuecomment-638884035
