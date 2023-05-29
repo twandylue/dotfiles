@@ -118,6 +118,7 @@ nnoremap N Nzzzv
 nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
 nnoremap Q <nop>
+nnoremap Y y$
 imap jj <Esc>
 inoremap <C-a> <Home>
 inoremap <C-e> <End>
