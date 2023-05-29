@@ -45,6 +45,8 @@ brew "lazygit"
 brew "lua-language-server"
 # Package manager for the Lua programming language
 brew "luarocks"
+# Fast, highly customisable system info script
+brew "neofetch"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # HTTP/2 C Library
@@ -61,8 +63,6 @@ brew "python@3.11"
 brew "redis", restart_service: true
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
-# Experimental Rust compiler front-end for IDEs
-brew "rust-analyzer"
 # Opinionated Lua code formatter
 brew "stylua"
 # Version control system designed to be a better CVS
