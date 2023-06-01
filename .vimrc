@@ -60,7 +60,7 @@ set statusline=
 set statusline+=\ 
 set statusline+=[%n]
 set statusline+=\ 
-set statusline+=%F
+set statusline+=%f
 set statusline+=%m
 set statusline+=\ 
 set statusline+=%y
@@ -149,7 +149,7 @@ call plug#end()
 colorscheme gruvbox
 set background=dark
 highlight search cterm=none ctermfg=black ctermbg=darkred
-highlight LineNr ctermfg=grey ctermbg=240
+highlight LineNr ctermfg=grey ctermbg=238
 
 "=====Highlightedyank====="
 let g:highlightedyank_highlight_duration = 250
