@@ -31,13 +31,24 @@ alias g++='g++-12'
 alias c++='c++-12'
 export CC='/opt/homebrew/bin/gcc-12'
 
+# open the file in vim
+fv() (
+    # export FZF_DEFAULT_COMMAND="fd -p -i -H -L -t f -t l -t x"
+    local files
+    IFS=$'\n' \
+       files=($(fzf --reverse \
+                    --preview "bat --theme=gruvbox-dark --color=always {}" \
+                    --query="$1" --multi --select-1 --exit-0))
+    [[ -n "$files" ]] && vim "${files[@]}"
+)
+
 # open the file in neovim
 fn() (
     # export FZF_DEFAULT_COMMAND="fd -p -i -H -L -t f -t l -t x"
     local files
     IFS=$'\n' \
        files=($(fzf --reverse \
-                    --preview "bat --theme=timu-spacegrey --color=always {}" \
+                    --preview "bat --theme=gruvbox-dark --color=always {}" \
                     --query="$1" --multi --select-1 --exit-0))
     [[ -n "$files" ]] && nvim "${files[@]}"
 )
@@ -47,7 +58,7 @@ ff() (
     local directory
     IFS=$'\n' \
        directory=$(fzf --reverse \
-                    --preview "bat --theme=timu-spacegrey --color=always {}" \
+                    --preview "bat --theme=gruvbox-dark --color=always {}" \
                     --query="$1" --multi --select-1 --exit-0) &&
     local dir="$(dirname ${directory[@]})"
     echo "$dir"
@@ -58,7 +69,7 @@ ff() (
 fd() {
   local dir
   dir=$(find ${1:-.} -path '*/\.*' -prune \
-				  -o -type d -print 2> /dev/null | fzf +m) &&
+				  -o -type d -print 2> /dev/null | fzf --reverse +m) &&
   echo "$dir"
   cd "$dir"
 }
@@ -94,6 +105,9 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# thefuck
+eval $(thefuck --alias)
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"

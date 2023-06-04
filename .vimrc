@@ -33,7 +33,7 @@ set linebreak
 set timeoutlen=1000
 set ttimeoutlen=50
 set path=.,,,**
-set wildignore+=*/.git/*,*/node_modules/*,*/.hg/*,*/.svn/*.,*/.DS_Store,*/bin,*/obj
+set wildignore+=*/.git/*,*/node_modules/*,*/.hg/*,*/.svn/*.,*/.DS_Store,*/bin/*,*/obj/*
 
 " native package
 packadd cfilter
