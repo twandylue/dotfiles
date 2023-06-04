@@ -69,10 +69,32 @@ ff() (
 fd() {
   local dir
   dir=$(find ${1:-.} -path '*/\.*' -prune \
-				  -o -type d -print 2> /dev/null | fzf --reverse +m) &&
+      -o -type d -print 2> /dev/null | fzf --reverse +m) &&
   echo "$dir"
   cd "$dir"
 }
+
+# Open the file in vim with rg
+# 1. Search for text in files using Ripgrep
+# 2. Interactively narrow down the list using fzf
+# 3. Open the file at specific line in Vim
+fw() (
+    local output=$(
+    rg --color=always --line-number --no-heading --smart-case "${*:-}" |
+        fzf --delimiter ":" \
+        --nth 2.. \
+        --reverse \
+        --ansi \
+        --preview-window "down:50%:+{2}" \
+        --preview "bat --style=numbers --theme=gruvbox-dark --color=always {} --highlight-line {2} {1}" \
+    )
+
+    local file=$(echo "$output" | cut -d":" -f1)
+    local line=$(echo "$output" | cut -d":" -f2)
+
+    [[ ! -z "$file" ]] && vim +"$line" "$file"
+)
+
 
 export ZSH="/Users/andy/.oh-my-zsh"
 
