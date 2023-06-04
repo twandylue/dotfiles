@@ -149,6 +149,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 " Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " Plug 'junegunn/fzf.vim'
+Plug 'rust-lang/rust.vim'
 call plug#end()
 
 "=====Theme====="
