@@ -11,11 +11,11 @@ ZSH_DISABLE_COMPFIX=true
 # If you come from bash you might have to change your $PATH.
 # use the bash from homebrew
 export PATH=/opt/homebrew/bin:$PATH
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/share/npm/bin:$PATH
 export PATH="$PATH:/Users/andy/.dotnet/tools"
 export PATH="$PATH:/Users/andy/Library/Caches/pip"
+export PATH="$PATH:/Users/andy/Library/Python/3.8/bin"
 export PATH=$HOME/.emacs.d/bin:$PATH
 
 # use vim mode in terminal command line
@@ -72,6 +72,10 @@ fd() {
       -o -type d -print 2> /dev/null | fzf --reverse +m) &&
   echo "$dir"
   cd "$dir"
+
+  # NOTE: for ubuntu
+  # ref: https://askubuntu.com/questions/481715/why-doesnt-cd-work-in-a-shell-script
+  # $SHELL
 }
 
 # Open the file in vim with rg
@@ -85,8 +89,8 @@ fw() (
         --nth 2.. \
         --reverse \
         --ansi \
-        --preview-window "down:50%:+{2}" \
         --preview "bat --style=numbers --theme=gruvbox-dark --color=always {} --highlight-line {2} {1}" \
+        --preview-window "down:60%:+{2}" \
     )
 
     local file=$(echo "$output" | cut -d":" -f1)
@@ -94,7 +98,6 @@ fw() (
 
     [[ ! -z "$file" ]] && vim +"$line" "$file"
 )
-
 
 export ZSH="/Users/andy/.oh-my-zsh"
 
