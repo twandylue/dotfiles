@@ -35,6 +35,15 @@ set ttimeoutlen=50
 set path=.,,,**
 set wildignore+=*/.git/*,*/node_modules/*,*/.hg/*,*/.svn/*.,*/.DS_Store,*/bin/*,*/obj/*
 
+" for wsl2 in Window
+" ref: https://github.com/vim/vim/issues/6365#issuecomment-1504996542
+if has('unix')
+    set t_u7= 
+    if $TERM =~ 'xterm-256color'
+      set noek
+    endif
+endif
+
 " native package
 packadd cfilter
 
@@ -124,7 +133,6 @@ nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
 nnoremap Q <nop>
 nnoremap Y y$
-imap jj <Esc>
 inoremap <C-a> <Home>
 inoremap <C-e> <End>
 inoremap <C-d> <Delete>
