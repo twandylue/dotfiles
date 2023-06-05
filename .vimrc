@@ -168,3 +168,9 @@ highlight LineNr ctermfg=grey ctermbg=238
 
 "=====Highlightedyank====="
 let g:highlightedyank_highlight_duration = 250
+
+" use rg instead of native grep
+if executable("rg")
+  set grepprg=rg\ --vimgrep\ --smart-case\ --hidden
+  set grepformat=%f:%l:%c:%m
+endif
