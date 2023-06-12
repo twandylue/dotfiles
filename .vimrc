@@ -10,17 +10,15 @@ set expandtab
 set smartindent
 set nowrap
 set smartcase
-set nobackup
+set ignorecase
 set incsearch
 set hlsearch
-set colorcolumn=120
+" set colorcolumn=120
 set showmode
 set showmatch
 set cursorline
-set ignorecase
 set nobackup
 set noswapfile
-set wildmenu
 set clipboard=unnamed
 set backspace=indent,eol,start
 set ttyfast
@@ -33,7 +31,14 @@ set linebreak
 set timeoutlen=1000
 set ttimeoutlen=50
 set path=.,,,**
+set wildmenu
 set wildignore+=*/.git/*,*/node_modules/*,*/.hg/*,*/.svn/*.,*/.DS_Store,*/bin/*,*/obj/*
+
+" native package
+packadd cfilter
+
+" Vim built-in manpage viewer 
+runtime ftplugin/man.vim
 
 " for wsl2 in Window
 " ref: https://github.com/vim/vim/issues/6365#issuecomment-1504996542
@@ -44,17 +49,16 @@ if has('unix')
     endif
 endif
 
-" native package
-packadd cfilter
-
-" WSL yank support
+" wsl2 in Window yank support
 " ref: https://github.com/microsoft/WSL/issues/4440#issuecomment-638884035
-let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path according to your mount point
-if executable(s:clip)
-    augroup WSLYank
-        autocmd!
-        autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
-    augroup END
+if has('win64') || has('win32') || has('win16')
+    let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path according to your mount point
+    if executable(s:clip)
+        augroup WSLYank
+            autocmd!
+            autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
+        augroup END
+    endif
 endif
 
 "=====Font====="
@@ -158,6 +162,7 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 " Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " Plug 'junegunn/fzf.vim'
 Plug 'rust-lang/rust.vim'
+Plug 'github/copilot.vim'
 call plug#end()
 
 "=====Theme====="
