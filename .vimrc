@@ -16,6 +16,7 @@ set hlsearch
 " set colorcolumn=120
 set showmode
 set showmatch
+set showcmd
 set cursorline
 set nobackup
 set noswapfile
@@ -23,6 +24,8 @@ set clipboard=unnamed
 set backspace=indent,eol,start
 set ttyfast
 set guicursor="i:block"
+set splitbelow
+set splitright
 set ruler
 set shortmess-=S
 set listchars=eol:↵,tab:>·,trail:.,extends:>,precedes:<,space:.
@@ -32,7 +35,21 @@ set timeoutlen=1000
 set ttimeoutlen=50
 set path=.,,,**
 set wildmenu
+set wildmode=longest:full,full
 set wildignore+=*/.git/*,*/node_modules/*,*/.hg/*,*/.svn/*.,*/.DS_Store,*/bin/*,*/obj/*
+set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.gif,*.psd,*.o,*.obj
+
+" Window Resizing
+nnoremap <M-Left> :vertical resize +1<CR>
+nnoremap <M-Right> :vertical resize -1<CR>
+nnoremap <M-Up> :resize +1<CR>
+nnoremap <M-Down> :resize -1<CR>
+
+" Move lines
+nnoremap <S-Up> :m .-2<CR>==
+nnoremap <S-Down> :m .+1<CR>==
+vnoremap <S-Up> :m '<-2<CR>gv=gv
+vnoremap <S-Down> :m '>+1<CR>gv=gv
 
 " native package
 packadd cfilter
@@ -122,25 +139,26 @@ nnoremap <silent> <Esc> :nohlsearch<CR>
 nnoremap <leader>s :w<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>m `
-nnoremap <S-h> ^
-nnoremap <S-l> g_
+" nnoremap <S-h> ^
+" nnoremap <S-l> g_
 nnoremap gj gT
 nnoremap gk gt
-nnoremap <space>ww <C-W>w
-nnoremap <space>wh <C-W>h
-nnoremap <space>wj <C-W>j
-nnoremap <space>wk <C-W>k
-nnoremap <space>wl <C-W>l
+nnoremap <leader>w <C-W>
 nnoremap n nzzzv
 nnoremap N Nzzzv
 nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
 nnoremap Q <nop>
 nnoremap Y y$
+
+" Insert Movement
+inoremap <C-f> <C-o>a
 inoremap <C-a> <Home>
 inoremap <C-e> <End>
 inoremap <C-d> <Delete>
-inoremap <C-o> <C-o>a
+
+" Don't move on *
+nnoremap * *<c-o>
 
 " for terminal mode
 nnoremap <c-\> :tab term ++close<cr>
@@ -150,7 +168,6 @@ tnoremap <Esc> <C-\><C-n>
 "=====Plugin====="
 call plug#begin()
 Plug 'morhetz/gruvbox'
-Plug 'preservim/nerdcommenter'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-unimpaired'
