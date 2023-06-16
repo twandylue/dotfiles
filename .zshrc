@@ -10,7 +10,9 @@ fi
 ZSH_DISABLE_COMPFIX=true
 # If you come from bash you might have to change your $PATH.
 # use the bash from homebrew
+export PATH="/opt/homebrew/sbin:$PATH"
 export PATH=/opt/homebrew/bin:$PATH
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/share/npm/bin:$PATH
 export PATH="$PATH:/Users/andy/.dotnet/tools"
@@ -20,6 +22,10 @@ export PATH=$HOME/.emacs.d/bin:$PATH
 
 # use vim mode in terminal command line
 set -o vi
+
+# add macvim to path
+# ref: https://michaelsoolee.com/launch-macvim-from-terminal/
+alias mvim="/Applications/MacVim.app/Contents/bin/mvim"
 
 # add to dotfiles
 alias dgit="git --git-dir ~/Desktop/dotfiles/.git/ --work-tree=$HOME"

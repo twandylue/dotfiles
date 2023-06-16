@@ -158,7 +158,7 @@ inoremap <C-e> <End>
 inoremap <C-d> <Delete>
 
 " Don't move on *
-nnoremap * *<c-o>
+" nnoremap * *<c-o>
 
 " for terminal mode
 nnoremap <c-\> :tab term ++close<cr>
