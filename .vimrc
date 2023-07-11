@@ -139,8 +139,6 @@ nnoremap <silent> <Esc> :nohlsearch<CR>
 nnoremap <leader>s :w<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>m `
-" nnoremap <S-h> ^
-" nnoremap <S-l> g_
 nnoremap gj gT
 nnoremap gk gt
 nnoremap <leader>w <C-W>
@@ -150,6 +148,7 @@ nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
 nnoremap Q <nop>
 nnoremap Y y$
+nnoremap D d$
 
 " Insert Movement
 inoremap <C-f> <C-o>a
@@ -173,8 +172,8 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-fugitive'
 Plug 'tommcdo/vim-exchange'
-Plug 'machakann/vim-highlightedyank'
 Plug 'jiangmiao/auto-pairs'
+Plug 'machakann/vim-highlightedyank'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 " Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " Plug 'junegunn/fzf.vim'
