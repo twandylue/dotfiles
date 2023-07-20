@@ -18,7 +18,6 @@ export PATH=/usr/local/share/npm/bin:$PATH
 export PATH="$PATH:/Users/andy/.dotnet/tools"
 export PATH="$PATH:/Users/andy/Library/Caches/pip"
 export PATH="$PATH:/Users/andy/Library/Python/3.8/bin"
-export PATH=$HOME/.emacs.d/bin:$PATH
 
 # use vim mode in terminal command line
 set -o vi
@@ -39,7 +38,6 @@ export CC='/opt/homebrew/bin/gcc-12'
 
 # open the file in vim
 fv() (
-    # export FZF_DEFAULT_COMMAND="fd -p -i -H -L -t f -t l -t x"
     local files
     IFS=$'\n' \
        files=($(fzf --reverse \
@@ -50,7 +48,6 @@ fv() (
 
 # open the file in neovim
 fn() (
-    # export FZF_DEFAULT_COMMAND="fd -p -i -H -L -t f -t l -t x"
     local files
     IFS=$'\n' \
        files=($(fzf --reverse \
@@ -60,7 +57,7 @@ fn() (
 )
 
 # Show the preview of files
-ff() (
+fp() (
     local directory
     IFS=$'\n' \
        directory=$(fzf --reverse \
