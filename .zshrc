@@ -19,9 +19,6 @@ export PATH="$PATH:/Users/andy/.dotnet/tools"
 export PATH="$PATH:/Users/andy/Library/Caches/pip"
 export PATH="$PATH:/Users/andy/Library/Python/3.8/bin"
 
-# use vim mode in terminal command line
-set -o vi
-
 # add macvim to path
 # ref: https://michaelsoolee.com/launch-macvim-from-terminal/
 alias mvim="/Applications/MacVim.app/Contents/bin/mvim"
@@ -56,20 +53,20 @@ fn() (
     [[ -n "$files" ]] && nvim "${files[@]}"
 )
 
-# Show the preview of files
+# Show the preview of files and print the file path
 fp() (
     local directory
     IFS=$'\n' \
        directory=$(fzf --reverse \
                     --preview "bat --theme=gruvbox-dark --color=always {}" \
                     --query="$1" --multi --select-1 --exit-0) &&
-    local dir="$(dirname ${directory[@]})"
-    echo "$dir"
-    cd "$dir"
+    # local dir="$(dirname ${directory[@]})"
+    # echo "${dir}"
+    echo "$directory"
 )
 
 # cd to the directory
-fd() {
+fdd() {
   local dir
   dir=$(find ${1:-.} -path '*/\.*' -prune \
       -o -type d -print 2> /dev/null | fzf --reverse +m) &&
@@ -139,3 +136,9 @@ eval $(thefuck --alias)
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+
+# use original vim mode in terminal command line
+# set -o vi
+
+# For zsh-vi-mode
+source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
