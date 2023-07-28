@@ -47,6 +47,8 @@ brew "lazygit"
 brew "lua-language-server"
 # Package manager for the Lua programming language
 brew "luarocks"
+# CLI for Node.js style checker and lint tool for Markdown files
+brew "markdownlint-cli"
 # Fast, highly customisable system info script
 brew "neofetch"
 # Ambitious Vim-fork focused on extensibility and agility
@@ -65,6 +67,12 @@ brew "python@3.11"
 brew "redis", restart_service: true
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Static analysis and lint tool, for (ba)sh scripts
+brew "shellcheck"
+# Bash syntax highlighter that encourages/fixes variables quoting
+brew "shellharden"
+# Autoformat shell script source code
+brew "shfmt"
 # Opinionated Lua code formatter
 brew "stylua"
 # Version control system designed to be a better CVS
@@ -87,6 +95,8 @@ brew "wget"
 brew "yarn"
 # Process YAML, JSON, XML, CSV and properties documents from the CLI
 brew "yq"
+# Better and friendly vi(vim) mode plugin for ZSH
+brew "zsh-vi-mode"
 # Task runner / simpler Make alternative written in Go
 brew "go-task/tap/go-task"
 # Free monospaced font with programming ligatures
