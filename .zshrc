@@ -23,7 +23,6 @@ export PATH="$PATH:/Users/andy/Library/Python/3.8/bin"
 # ref: https://michaelsoolee.com/launch-macvim-from-terminal/
 alias mvim="/Applications/MacVim.app/Contents/bin/mvim"
 
-# add Neovide to path
 alias nv="/Applications/Neovide.app/Contents/MacOS/Neovide"
 
 # add to dotfiles
