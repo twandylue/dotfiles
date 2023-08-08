@@ -19,6 +19,10 @@ brew "apollo-cli"
 brew "bash"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.11"
+# Python code formatter
+brew "black"
 # Formatting tools for C, C++, Obj-C, Java, JavaScript, TypeScript
 brew "clang-format"
 # Simple, fast and user-friendly alternative to find
@@ -61,8 +65,6 @@ brew "perl"
 brew "poppler"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.10"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.11"
 # Persistent key-value database, with built-in net interface
 brew "redis", restart_service: true
 # Search tool like grep and The Silver Searcher
@@ -106,5 +108,7 @@ cask "font-jetbrains-mono"
 # Developer targeted fonts with a high number of glyphs
 cask "font-sauce-code-pro-nerd-font"
 cask "font-source-code-pro-for-powerline"
+# Neovim Client
+cask "neovide"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
 cask "wezterm"
