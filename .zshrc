@@ -23,6 +23,9 @@ export PATH="$PATH:/Users/andy/Library/Python/3.8/bin"
 # ref: https://michaelsoolee.com/launch-macvim-from-terminal/
 alias mvim="/Applications/MacVim.app/Contents/bin/mvim"
 
+# add Neovide to path
+alias nv="/Applications/Neovide.app/Contents/MacOS/Neovide"
+
 # add to dotfiles
 alias dgit="git --git-dir ~/Desktop/dotfiles/.git/ --work-tree=$HOME"
 
@@ -134,11 +137,12 @@ source $ZSH/oh-my-zsh.sh
 # thefuck
 eval $(thefuck --alias)
 
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
 
 # use original vim mode in terminal command line
 # set -o vi
 
 # For zsh-vi-mode
 source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
