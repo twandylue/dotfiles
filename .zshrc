@@ -23,7 +23,7 @@ export PATH="$PATH:/Users/andy/Library/Python/3.8/bin"
 # ref: https://michaelsoolee.com/launch-macvim-from-terminal/
 alias mvim="/Applications/MacVim.app/Contents/bin/mvim"
 
-alias nv="/Applications/Neovide.app/Contents/MacOS/Neovide"
+alias nvide="/Applications/Neovide.app/Contents/MacOS/Neovide"
 
 # add to dotfiles
 alias dgit="git --git-dir ~/Desktop/dotfiles/.git/ --work-tree=$HOME"
@@ -145,3 +145,38 @@ source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+
+# For mutliple neovim/neovide config
+# ref: 
+# 1. https://gist.github.com/elijahmanor/b279553c0132bfad7eae23e34ceb593b
+# 2. https://www.youtube.com/watch?v=LkHjJlSgKZY&ab_channel=ElijahManor
+alias nvim-raw="NVIM_APPNAME=nvim-raw nvim"
+alias nvide-raw="NVIM_APPNAME=nvim-raw neovide"
+
+function nvims() {
+  items=("default" "nvim-raw")
+  config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
+  if [[ -z $config ]]; then
+    echo "Nothing selected"
+    return 0
+  elif [[ $config == "default" ]]; then
+    config=""
+  fi
+  NVIM_APPNAME=$config nvim $@
+}
+
+bindkey -s ^a "nvims\n"
+
+function nvides() {
+  items=("default" "nvim-raw")
+  config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
+  if [[ -z $config ]]; then
+    echo "Nothing selected"
+    return 0
+  elif [[ $config == "default" ]]; then
+    config=""
+  fi
+  NVIM_APPNAME=$config neovide $@
+}
+
+bindkey -s ^a "nvides\n"
