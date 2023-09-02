@@ -8,16 +8,17 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 ZSH_DISABLE_COMPFIX=true
-# If you come from bash you might have to change your $PATH.
-# use the bash from homebrew
+# use the application provided by Homebrew instead of the system default
+export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/opt/homebrew/sbin:$PATH"
-export PATH=/opt/homebrew/bin:$PATH
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=/usr/local/bin:$PATH
-export PATH=/usr/local/share/npm/bin:$PATH
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
+
+export PATH="/usr/local/bin:$PATH"
+# export PATH="/usr/local/share/npm/bin:$PATH"
 export PATH="$PATH:/Users/andy/.dotnet/tools"
-export PATH="$PATH:/Users/andy/Library/Caches/pip"
-export PATH="$PATH:/Users/andy/Library/Python/3.8/bin"
+
 
 # add macvim to path
 # ref: https://michaelsoolee.com/launch-macvim-from-terminal/
@@ -28,13 +29,7 @@ alias nvid="/Applications/Neovide.app/Contents/MacOS/Neovide"
 # add to dotfiles
 alias dgit="git --git-dir ~/Desktop/dotfiles/.git/ --work-tree=$HOME"
 
-# specify g++ version
-alias gcc='gcc-12'
-alias cpp='cpp-12'
-alias g++='g++-12'
-alias c++='c++-12'
-export CC='/opt/homebrew/bin/gcc-12'
-
+############ Functions begin ############
 # open the file in vim
 fv() (
     local files
@@ -101,6 +96,8 @@ fw() (
     [[ ! -z "$file" ]] && vim +"$line" "$file"
 )
 
+############ Functions over ############
+
 export ZSH="/Users/andy/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
@@ -133,18 +130,11 @@ source $ZSH/oh-my-zsh.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# thefuck
-eval $(thefuck --alias)
-
-
-# use original vim mode in terminal command line
+# Use original vim mode in terminal command line
 # set -o vi
 
 # For zsh-vi-mode
 source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
-
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
 
 # For mutliple neovim/neovide config
 # ref: 
@@ -180,3 +170,6 @@ function nvids() {
 }
 
 bindkey -s ^a "nvids\n"
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
