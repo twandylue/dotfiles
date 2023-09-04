@@ -14,6 +14,7 @@ set ignorecase
 set incsearch
 set hlsearch
 " set colorcolumn=120
+set hidden
 set showmode
 set showmatch
 set showcmd
