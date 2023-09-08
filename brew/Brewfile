@@ -11,10 +11,6 @@ tap "homebrew/test-bot"
 tap "isen-ng/dotnet-sdk-versions"
 tap "omnisharp/omnisharp-roslyn"
 tap "wez/wezterm"
-# Platform built on V8 to build network applications
-brew "node"
-# Command-line tool for Apollo GraphQL
-brew "apollo-cli"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
 # Clone of cat(1) with syntax highlighting and Git integration
@@ -25,6 +21,8 @@ brew "python@3.11"
 brew "black"
 # Formatting tools for C, C++, Obj-C, Java, JavaScript, TypeScript
 brew "clang-format"
+# Platform built on V8 to build network applications
+brew "node"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
 # Command-line fuzzy finder written in Go
@@ -47,8 +45,8 @@ brew "jq"
 brew "k6"
 # Simple terminal UI for git commands
 brew "lazygit"
-# Language Server for the Lua language
-brew "lua-language-server"
+# Next-gen compiler infrastructure
+brew "llvm"
 # Package manager for the Lua programming language
 brew "luarocks"
 # CLI for Node.js style checker and lint tool for Markdown files
@@ -63,6 +61,8 @@ brew "nghttp2"
 brew "perl"
 # PDF rendering library (based on the xpdf-3.0 code base)
 brew "poppler"
+# Python version management
+brew "pyenv"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.10"
 # Persistent key-value database, with built-in net interface
