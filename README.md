@@ -1,6 +1,6 @@
 # dotfiles
 
-Add to my dofile repository
+Add to my dotfile repository
 
 ```console
 git --git-dir ~/Desktop/dotfiles/.git/ --work-tree=$HOME add [specific dotfile]
