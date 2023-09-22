@@ -139,6 +139,7 @@ let mapleader=" "
 nnoremap <silent> <Esc> :nohlsearch<CR>
 nnoremap <leader>s :w<CR>
 nnoremap <leader>q :q<CR>
+nnoremap <leader>f :cw<CR>
 nnoremap <leader>m `
 nnoremap gj gT
 nnoremap gk gt
