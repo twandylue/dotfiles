@@ -85,6 +85,7 @@ if has("gui_running")
     set guifont=Inconsolata\ 12
   elseif has("gui_macvim")
     set guifont=Menlo\ Regular:h14
+    inoremap <D-d> <C-o>dw
   elseif has("gui_win32")
     set guifont=Consolas:h12:cANSI
   endif
@@ -151,6 +152,8 @@ nnoremap <C-u> <C-u>zz
 nnoremap Q <nop>
 nnoremap Y y$
 nnoremap D d$
+" TODO: What is meta key in vim on wezterm?
+inoremap <M-d> <C-o>dw
 
 " Insert Movement
 inoremap <C-f> <C-o>a
