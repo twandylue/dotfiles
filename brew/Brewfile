@@ -95,8 +95,6 @@ brew "vim"
 brew "wget"
 # JavaScript package manager
 brew "yarn"
-# Process YAML, JSON, XML, CSV and properties documents from the CLI
-brew "yq"
 # Better and friendly vi(vim) mode plugin for ZSH
 brew "zsh-vi-mode"
 # Task runner / simpler Make alternative written in Go
