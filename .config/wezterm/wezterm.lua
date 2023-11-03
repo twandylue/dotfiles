@@ -8,7 +8,8 @@ if wezterm.target_triple == "x86_64-pc-windows-msvc" then
 end
 
 return {
-  font = wezterm.font("JetBrains Mono", { weight = "Bold", italic = false }),
+  -- font = wezterm.font("JetBrains Mono", { weight = "Bold", italic = false }),
+  font = wezterm.font("ComicShannsMono Nerd Font Mono", { weight = "Bold", italic = false }),
   color_scheme = "Gruvbox dark, soft (base16)",
   colors = {
     cursor_bg = "Red",
