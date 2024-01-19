@@ -15,12 +15,12 @@ tap "wez/wezterm"
 brew "bash"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.11"
 # Python code formatter
 brew "black"
 # Formatting tools for C, C++, Obj-C, Java, JavaScript, TypeScript
 brew "clang-format"
+# Cross-platform make
+brew "cmake"
 # Platform built on V8 to build network applications
 brew "node"
 # Simple, fast and user-friendly alternative to find
@@ -37,6 +37,8 @@ brew "unbound"
 brew "gnutls"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.11"
 # Improved top (interactive process viewer)
 brew "htop"
 # Lightweight and flexible command-line JSON processor
@@ -57,6 +59,8 @@ brew "neofetch"
 brew "neovim"
 # HTTP/2 C Library
 brew "nghttp2"
+# Swiss-army knife of markup format conversion
+brew "pandoc"
 # Highly capable, feature-rich programming language
 brew "perl"
 # PDF rendering library (based on the xpdf-3.0 code base)
@@ -65,8 +69,6 @@ brew "poppler"
 brew "pyenv"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.10"
-# Persistent key-value database, with built-in net interface
-brew "redis", restart_service: true
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Static analysis and lint tool, for (ba)sh scripts
