@@ -91,6 +91,8 @@ brew "thefuck"
 brew "tmux"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Markup-based typesetting system
+brew "typst"
 # Ncurses-based file manager with vi-like keybindings
 brew "vifm"
 # Vi 'workalike' with many additional features
