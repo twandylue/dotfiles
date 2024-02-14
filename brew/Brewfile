@@ -67,6 +67,8 @@ brew "perl"
 brew "poppler"
 # Python version management
 brew "pyenv"
+# It's not just a linter that annoys you!
+brew "pylint"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.10"
 # Search tool like grep and The Silver Searcher
