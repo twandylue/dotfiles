@@ -35,8 +35,6 @@ brew "git"
 brew "unbound"
 # GNU Transport Layer Security (TLS) Library
 brew "gnutls"
-# Open source programming language to build simple/reliable/efficient software
-brew "go"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.11"
 # Improved top (interactive process viewer)
@@ -101,6 +99,10 @@ brew "vim"
 brew "wget"
 # JavaScript package manager
 brew "yarn"
+# Blazing fast terminal file manager written in Rust, based on async I/O
+brew "yazi"
+# Shell extension to navigate your filesystem faster
+brew "zoxide"
 # Better and friendly vi(vim) mode plugin for ZSH
 brew "zsh-vi-mode"
 # Task runner / simpler Make alternative written in Go

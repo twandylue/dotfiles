@@ -19,6 +19,8 @@ export PATH="/usr/local/bin:$PATH"
 # export PATH="/usr/local/share/npm/bin:$PATH"
 export PATH="$PATH:/Users/andy/.dotnet/tools"
 
+export EDITOR=vim
+# export EDITOR=nvim
 
 # add macvim to path
 # ref: https://michaelsoolee.com/launch-macvim-from-terminal/
@@ -112,7 +114,9 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
-plugins=(git)
+plugins=(
+    git
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -137,7 +141,7 @@ source $ZSH/oh-my-zsh.sh
 source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 # For mutliple neovim/neovide config
-# ref: 
+# ref:
 # 1. https://gist.github.com/elijahmanor/b279553c0132bfad7eae23e34ceb593b
 # 2. https://www.youtube.com/watch?v=LkHjJlSgKZY&ab_channel=ElijahManor
 alias nvim-raw="NVIM_APPNAME=nvim-raw nvim"
@@ -173,3 +177,19 @@ bindkey -s ^a "nvids\n"
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+
+# yazi
+function ya() {
+    local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
+    yazi "$@" --cwd-file="$tmp"
+    if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+        cd -- "$cwd"
+    fi
+    rm -f -- "$tmp"
+}
+
+# zoxide
+eval "$(zoxide init zsh)"
+
+# thefuck
+eval $(thefuck --alias)
