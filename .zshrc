@@ -12,26 +12,27 @@ ZSH_DISABLE_COMPFIX=true
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/opt/homebrew/sbin:$PATH"
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
-export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
-
 export PATH="/usr/local/bin:$PATH"
 # export PATH="/usr/local/share/npm/bin:$PATH"
 export PATH="$PATH:/Users/andy/.dotnet/tools"
+export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
 
+# Default editor
 export EDITOR=vim
 # export EDITOR=nvim
 
-# add macvim to path
+# Add macvim to path
 # ref: https://michaelsoolee.com/launch-macvim-from-terminal/
 alias mvim="/Applications/MacVim.app/Contents/bin/mvim"
 
+# Add noevide to path
 alias nvid="/Applications/Neovide.app/Contents/MacOS/Neovide"
 
-# add to dotfiles
+# add to dotfiles repository
 alias dgit="git --git-dir ~/Desktop/dotfiles/.git/ --work-tree=$HOME"
 
-############ Functions begin ############
+############ Customized Functions ############
 # open the file in vim
 fv() (
     local files
@@ -100,6 +101,7 @@ fw() (
 
 ############ Functions over ############
 
+############ Setting ZSH ############
 export ZSH="/Users/andy/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
@@ -138,10 +140,13 @@ source $ZSH/oh-my-zsh.sh
 # set -o vi
 
 # For zsh-vi-mode
+# ref: https://github.com/jeffreytse/zsh-vi-mode
 source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
+############ Setting ZSH over ############
+
 # For mutliple neovim/neovide config
-# ref:
+# ref: 
 # 1. https://gist.github.com/elijahmanor/b279553c0132bfad7eae23e34ceb593b
 # 2. https://www.youtube.com/watch?v=LkHjJlSgKZY&ab_channel=ElijahManor
 alias nvim-raw="NVIM_APPNAME=nvim-raw nvim"
@@ -175,9 +180,6 @@ function nvids() {
 
 bindkey -s ^a "nvids\n"
 
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
-
 # yazi
 function ya() {
     local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
@@ -188,8 +190,11 @@ function ya() {
     rm -f -- "$tmp"
 }
 
+# thefuck
+eval $(thefuck --alias)
+
 # zoxide
 eval "$(zoxide init zsh)"
 
-# thefuck
-eval $(thefuck --alias)
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
