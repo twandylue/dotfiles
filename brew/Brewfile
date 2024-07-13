@@ -23,6 +23,8 @@ brew "clang-format"
 brew "cmake"
 # Platform built on V8 to build network applications
 brew "node"
+# LLVM bytecode to JavaScript compiler
+brew "emscripten"
 # Perl lib for reading and writing EXIF metadata
 brew "exiftool"
 # Simple, fast and user-friendly alternative to find
@@ -37,8 +39,8 @@ brew "git"
 brew "unbound"
 # GNU Transport Layer Security (TLS) Library
 brew "gnutls"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.11"
+# Generate introspection data for GObject libraries
+brew "gobject-introspection"
 # Improved top (interactive process viewer)
 brew "htop"
 # Lightweight and flexible command-line JSON processor
@@ -71,6 +73,8 @@ brew "pyenv"
 brew "pylint"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.10"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.11"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Static analysis and lint tool, for (ba)sh scripts
@@ -85,8 +89,6 @@ brew "stylua"
 brew "subversion"
 # User interface to the TELNET protocol
 brew "telnet"
-# Programmatically correct mistyped console commands
-brew "thefuck"
 # Terminal multiplexer
 brew "tmux"
 # Display directories as trees (with optional color/HTML output)
@@ -107,13 +109,8 @@ brew "yazi"
 brew "zoxide"
 # Better and friendly vi(vim) mode plugin for ZSH
 brew "zsh-vi-mode"
-# Task runner / simpler Make alternative written in Go
-brew "go-task/tap/go-task"
-# Free monospaced font with programming ligatures
 cask "font-fira-code"
-# Typeface made for developers
 cask "font-jetbrains-mono"
-# Developer targeted fonts with a high number of glyphs
 cask "font-sauce-code-pro-nerd-font"
 cask "font-source-code-pro-for-powerline"
 # Neovim Client
