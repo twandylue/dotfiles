@@ -190,8 +190,9 @@ function ya() {
     rm -f -- "$tmp"
 }
 
-# thefuck
-eval $(thefuck --alias)
+# fzf
+eval "$(fzf --zsh)"
+set rtp+=/opt/homebrew/opt/fzf
 
 # zoxide
 eval "$(zoxide init zsh)"
