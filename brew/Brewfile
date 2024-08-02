@@ -11,6 +11,8 @@ tap "homebrew/test-bot"
 tap "isen-ng/dotnet-sdk-versions"
 tap "omnisharp/omnisharp-roslyn"
 tap "wez/wezterm"
+# Spell checker with better logic than ispell
+brew "aspell"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
 # Clone of cat(1) with syntax highlighting and Git integration
@@ -21,6 +23,10 @@ brew "black"
 brew "clang-format"
 # Cross-platform make
 brew "cmake"
+# Color-highlighted diff(1) output
+brew "colordiff"
+# Static analysis of C and C++ code
+brew "cppcheck"
 # Platform built on V8 to build network applications
 brew "node"
 # LLVM bytecode to JavaScript compiler
