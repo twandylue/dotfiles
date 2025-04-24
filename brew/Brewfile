@@ -19,6 +19,8 @@ brew "bash"
 brew "bat"
 # Python code formatter
 brew "black"
+# Core application library for C
+brew "glib"
 # Formatting tools for C, C++, Obj-C, Java, JavaScript, TypeScript
 brew "clang-format"
 # Cross-platform make
@@ -27,8 +29,18 @@ brew "cmake"
 brew "colordiff"
 # Static analysis of C and C++ code
 brew "cppcheck"
+# Validating, recursive, caching DNS resolver
+brew "unbound"
+# GNU Transport Layer Security (TLS) Library
+brew "gnutls"
+# GNU Emacs text editor
+brew "emacs"
+# OpenType text shaping engine
+brew "harfbuzz"
 # Platform built on V8 to build network applications
 brew "node"
+# Development kit for the Java programming language
+brew "openjdk"
 # LLVM bytecode to JavaScript compiler
 brew "emscripten"
 # Perl lib for reading and writing EXIF metadata
@@ -41,12 +53,16 @@ brew "fzf"
 brew "gcc"
 # Distributed revision control system
 brew "git"
-# Validating, recursive, caching DNS resolver
-brew "unbound"
-# GNU Transport Layer Security (TLS) Library
-brew "gnutls"
+# GNU Pretty Good Privacy (PGP) package
+brew "gnupg"
+# Package compiler and linker metadata toolkit
+brew "pkgconf"
 # Generate introspection data for GObject libraries
 brew "gobject-introspection"
+# Library access to GnuPG
+brew "gpgme"
+# Graph visualization software from AT&T and Bell Labs
+brew "graphviz"
 # Improved top (interactive process viewer)
 brew "htop"
 # Lightweight and flexible command-line JSON processor
@@ -73,16 +89,16 @@ brew "pandoc"
 brew "perl"
 # PDF rendering library (based on the xpdf-3.0 code base)
 brew "poppler"
-# Python version management
-brew "pyenv"
 # It's not just a linter that annoys you!
 brew "pylint"
 # Interpreted, interactive, object-oriented programming language
-brew "python@3.10"
-# Interpreted, interactive, object-oriented programming language
 brew "python@3.11"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.12"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Steel Bank Common Lisp system
+brew "sbcl"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
 # Bash syntax highlighter that encourages/fixes variables quoting
@@ -95,14 +111,14 @@ brew "stylua"
 brew "subversion"
 # User interface to the TELNET protocol
 brew "telnet"
+# OCR (Optical Character Recognition) engine
+brew "tesseract"
 # Terminal multiplexer
 brew "tmux"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
 # Markup-based typesetting system
 brew "typst"
-# Ncurses-based file manager with vi-like keybindings
-brew "vifm"
 # Vi 'workalike' with many additional features
 brew "vim"
 # Internet file retriever
@@ -119,7 +135,5 @@ cask "font-fira-code"
 cask "font-jetbrains-mono"
 cask "font-sauce-code-pro-nerd-font"
 cask "font-source-code-pro-for-powerline"
-# Neovim Client
-cask "neovide"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
 cask "wezterm"
