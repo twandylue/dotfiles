@@ -1,0 +1,144 @@
+{
+    "editor.accessibilitySupport": "off",
+    "vim.statusBarColors.visualline": "",
+    "vim.sneakUseIgnorecaseAndSmartcase": true,
+    "vim.leader": "<space>",
+    "vim.wrapscan": false,
+    "vim.hlsearch": true,
+    "vim.incsearch": true, // Highlight while typing /search
+    "vim.highlightedyank.enable": true,
+    "vim.easymotion": true,
+    "vim.surround": true,
+    "vim.vimrc.enable": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.commandLineModeKeyBindings": [],
+    "vim.operatorPendingModeKeyBindingsNonRecursive": [],
+    "vim.commandLineModeKeyBindingsNonRecursive": [],
+    "vim.searchMatchColor": "#00cc44a8",     // Current match
+    "vim.searchHighlightColor": "#ff7b00a1", // Other matches
+    "window.zoomLevel": 1,
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["<leader>", "."],
+            "commands": ["workbench.action.quickOpen"]
+        },
+        {
+            "before": ["<leader>", "e"],
+            "commands": ["workbench.action.toggleSidebarVisibility"]
+        },
+        {
+            "before": ["[", "g"],
+            "commands": ["workbench.action.findInFiles"]
+        },
+        {
+            "before": ["g", "r"],
+            "commands": ["editor.action.rename"]
+        },
+        {
+            "before": ["<leader>", "c", "o"],
+            "commands": ["workbench.panel.chat.view.copilot.focus"]
+        },
+        {
+            "before": ["<leader>", "c", "c"],
+            "commands": ["workbench.action.closeAuxiliaryBar"]
+        },
+        {
+            "before": ["[", "e"],
+            "commands": ["editor.action.marker.prevInFiles"]
+        },
+        {
+            "before": ["]", "e"],
+            "commands": ["editor.action.marker.nextInFiles"]
+        },
+        {
+            "before": ["<leader>", "b", "p"],
+            "commands": ["editor.debug.action.toggleBreakpoint"]
+        },
+    ],
+    "vim.visualModeKeyBindings": [
+        {
+            "before": ["<leader>", "g", "s"],
+            "commands": ["git.stageSelectedRanges"]
+        },
+        {
+            "before": ["<leader>", "g", "u"],
+            "commands": ["git.unstageSelectedRanges"]
+        },
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<Esc>"],
+            "commands": ["closeMarkersNavigation", ":nohlsearch"]
+        },
+    ],
+    "vim.insertModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<C-e>"],
+            "commands": ["cursorEnd"]
+        },
+        {
+            "before": ["<C-a>"],
+            "commands": ["cursorHome"]
+        }
+    ],
+    "extensions.experimental.affinity": {
+        "vscodevim.vim": 1
+    },
+    "terminal.integrated.env.osx": {
+        "FIG_NEW_SESSION": "1",
+        "Q_NEW_SESSION": "1"
+    },
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": true,
+        "markdown": true,
+        "scminput": false
+    },
+    "editor.fontFamily": "ComicShannsMono Nerd Font Mono, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontSize": 14,
+    "workbench.colorCustomizations": {
+            "editor.selectionBackground": "#135564",
+            "editor.selectionHighlightBackground": "#135564",
+            "editor.findMatchBackground": "#00cc44a8", //Current SEARCH MATCH
+            "editor.findMatchHighlightBackground": "#ff7b00a1" //Other SEARCH MATCHES
+    },
+    "workbench.colorTheme": "GitHub Dark",
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.editor.highlightModifiedTabs": true,
+    "notebook.output.textLineLimit": 150,
+    "settingsSync.ignoredSettings": [
+        "notebook.output.textLineLimit"
+    ],
+    "editor.wordWrap": "on",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "[markdown]": {
+        "editor.defaultFormatter": "darkriszty.markdown-table-prettify"
+    },
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "diffEditor.hideUnchangedRegions.enabled": true,
+    "redhat.telemetry.enabled": false,
+    "python.analysis.typeCheckingMode": "standard",
+    "git.autofetch": true,
+    "docker.extension.enableComposeLanguageServer": false,
+    "[dockercompose]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "advanced",
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": false,
+            "strings": true
+        },
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "[github-actions-workflow]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "yaml.schemas": {
+        "file:///Users/anlu/.vscode/extensions/atlassian.atlascode-4.0.9/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    },
+    "markdown-preview-enhanced.revealjsTheme": "sky.css",
+    "python.analysis.inlayHints.functionReturnTypes": true,
+    "python.analysis.inlayHints.callArgumentNames": "partial",
+}
