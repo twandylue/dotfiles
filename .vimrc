@@ -1,6 +1,7 @@
 syntax on
 set number
 set relativenumber
+set nowrapscan
 set mouse=a
 set tabstop=4 softtabstop=4
 set shiftwidth=4
@@ -24,7 +25,8 @@ set noswapfile
 set clipboard=unnamed
 set backspace=indent,eol,start
 set ttyfast
-set guicursor="i:block"
+set belloff=all
+" set guicursor="i:block"
 set splitbelow
 set splitright
 set ruler
@@ -39,6 +41,8 @@ set wildmenu
 set wildmode=longest:full,full
 set wildignore+=*/.git/*,*/node_modules/*,*/.hg/*,*/.svn/*.,*/.DS_Store,*/bin/*,*/obj/*
 set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.gif,*.psd,*.o,*.obj
+" fzf
+set rtp+=/opt/homebrew/opt/fzf
 
 " Window Resizing
 nnoremap <M-Left> :vertical resize +1<CR>
@@ -157,6 +161,7 @@ inoremap <M-d> <C-o>dw
 
 " Insert Movement
 inoremap <C-f> <C-o>a
+inoremap <C-b> <Left>
 inoremap <C-a> <Home>
 inoremap <C-e> <End>
 inoremap <C-d> <Delete>
