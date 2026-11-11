@@ -189,11 +189,11 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'rust-lang/rust.vim'
-Plug 'github/copilot.vim'
 call plug#end()
 
 "=====Theme====="
 colorscheme gruvbox
+" colorscheme quiet
 set background=dark
 highlight search cterm=none ctermfg=black ctermbg=darkred
 highlight LineNr ctermfg=grey ctermbg=238
@@ -205,4 +205,6 @@ let g:highlightedyank_highlight_duration = 250
 if executable("rg")
   set grepprg=rg\ --vimgrep\ --smart-case\ --hidden\ --glob\ '!.git'
   set grepformat=%f:%l:%c:%m
+else
+  set grepprg=ggrep\ -nH\ -R\ -I\ --exclude-dir=.git
 endif

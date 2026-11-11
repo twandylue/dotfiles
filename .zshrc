@@ -6,13 +6,12 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 ZSH_DISABLE_COMPFIX=true
+
 # use the application provided by Homebrew instead of the system default
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/opt/homebrew/sbin:$PATH"
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
-# export PATH="/usr/local/share/npm/bin:$PATH"
-export PATH="$PATH:/Users/andy/.dotnet/tools"
 export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
 
@@ -42,17 +41,24 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
-plugins=(git)
-
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+# Emacs mode
+bindkey -e
+
+# Vim mode
+# bindkey -v
+#
 # Use original vim mode in terminal command line
 # set -o vi
 
-# Use emacs key bindings
-bindkey -e
+# Grep color
+alias ggrep='ggrep --color=auto'
+export GREP_COLORS='ms=01;31'
+
+plugins=(git)
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -64,6 +70,11 @@ source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 # For zsh autosuggestions
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# For zsh autocomplete
+# source $(brew --prefix)/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+
+#### Custom Config ####
 
 # For mutliple neovim/neovide config
 # ref: 
